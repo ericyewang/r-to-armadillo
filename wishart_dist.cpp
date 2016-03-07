@@ -69,5 +69,5 @@ arma::mat rwishart(unsigned int df, const arma::mat& S){
 //' riwishart(3, diag(2))
 // [[Rcpp::export]]
 arma::mat riwishart(unsigned int df, const arma::mat& S){
-  return rwishart(df,S.i()).i();
+  return rwishart(df, inv_sympd( S )).i();
 }
